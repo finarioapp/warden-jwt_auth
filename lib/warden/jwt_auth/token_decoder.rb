@@ -14,6 +14,7 @@ module Warden
       # @param token [String] a JWT
       # @return [Hash] payload decoded from the JWT
       def call(token)
+        puts "BREADCRUMB 3 - SECRET AND ALG ARE SET "
         JWT.decode(token,
                    secret,
                    true,

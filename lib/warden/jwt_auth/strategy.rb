@@ -16,6 +16,7 @@ module Warden
       end
 
       def authenticate!
+        puts "BREADCRUMB 1"
         aud = EnvHelper.aud_header(env)
         user = UserDecoder.new.call(token, scope, aud)
         success!(user)
@@ -26,6 +27,7 @@ module Warden
       private
 
       def token
+        "BREADCRUMB 4 - PARSING TOKEN"
         @token ||= HeaderParser.from_env(env)
       end
     end

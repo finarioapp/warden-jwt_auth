@@ -14,6 +14,7 @@ module Warden
       # @return [String] JWT token
       # @return [nil] if token is not present
       def self.from_env(env)
+        puts "BREADCRUMB 2? HEADER IS SET"
         auth = EnvHelper.authorization_header(env)
         return nil unless auth
 

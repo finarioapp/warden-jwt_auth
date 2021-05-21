@@ -53,6 +53,7 @@ module Warden
       # @param env [Hash] Rack env
       # @return [String]
       def self.aud_header(env)
+        puts "BREADCRUMB 2? - HEADER IS SET"
         env_name = ('HTTP_' + JWTAuth.config.aud_header.upcase).tr('-', '_')
         env[env_name]
       end
