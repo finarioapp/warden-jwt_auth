@@ -14,7 +14,6 @@ module Warden
         JWT.decode(token,
                    secret,
                    true,
-                   algorithm: TokenEncoder::ALG,
                    verify_jti: true)[0]
       end
     end
