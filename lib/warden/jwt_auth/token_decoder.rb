@@ -18,7 +18,6 @@ module Warden
         JWT.decode(token,
                    secret,
                    true,
-                   algorithm: algorithm,
                    verify_jti: true)[0]
       end
     end
